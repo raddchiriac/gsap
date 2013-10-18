@@ -1,6 +1,6 @@
 define(["jquery"], function($) {
   $.fn.kkkclients = function() {  		
-  		var _move 	= $('<a href="#">move</a>'),
+  		var _move 	= $('<a href="#" id="right-triangle"></a>'),
   		_root 		= $(this),
   		_list 		= $(_root.find('ul'));
   		
@@ -20,8 +20,8 @@ define(["jquery"], function($) {
       		if(!moving) {
       			var upItem 			= _list.find('li.upper-part.active').find('img'),
 	      			downItem 		= _list.find('li.lower-part.active').find('img'),
-	      			nextUpperItem	= $(upItem).parent().nextAll('.upper-part').find('img'),
-	      			nextLowerItem	= $(downItem).parent().nextAll('.lower-part').find('img'),
+	      			nextUpperItem	= $(upItem).parent().nextAll('.upper-part:first').find('img'),
+	      			nextLowerItem	= $(downItem).parent().nextAll('.lower-part:first').find('img'),
 	      			tl 				= new TimelineLite();
 
 	      		if(nextUpperItem.html() == undefined || nextLowerItem.html() == undefined) {
